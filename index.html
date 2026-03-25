@@ -410,6 +410,48 @@
   .footer-contact a { color: var(--or-clair); text-decoration: none; }
   .footer-copy { margin-top: 1.5rem; font-size: 0.72rem; opacity: 0.5; }
 
+
+  /* ===== MÉDIAS ===== */
+  #medias { background: var(--blanc); }
+  .medias-inner { max-width: 1100px; margin: 0 auto; }
+  .medias-header { margin-bottom: 2.5rem; }
+  .medias-nav {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(196,0,26,0.12); padding-bottom: 1rem;
+  }
+  .media-tab {
+    font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase; padding: 0.5rem 1.4rem;
+    background: transparent; border: none; color: var(--gris); cursor: pointer;
+    position: relative; transition: color 0.2s;
+  }
+  .media-tab::after {
+    content: ''; position: absolute; bottom: -1rem; left: 0; right: 0;
+    height: 2px; background: var(--rouge); transform: scaleX(0); transition: transform 0.2s;
+  }
+  .media-tab.active { color: var(--rouge); }
+  .media-tab.active::after { transform: scaleX(1); }
+  .media-tab:hover { color: var(--rouge); }
+  .media-section { display: none; }
+  .media-section.active { display: block; }
+  .media-category-title {
+    font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300;
+    color: var(--texte); margin-bottom: 0.6rem;
+    padding-bottom: 0.8rem; border-bottom: 1px solid rgba(196,0,26,0.15);
+    margin-bottom: 1.8rem;
+  }
+  .media-list { list-style: none; margin-bottom: 3rem; }
+  .media-list li {
+    display: flex; align-items: baseline; gap: 0.8rem;
+    padding: 0.9rem 0; border-bottom: 1px solid rgba(0,0,0,0.05);
+    font-size: 0.9rem; color: var(--texte); line-height: 1.6;
+  }
+  .media-list li::before {
+    content: '•'; color: var(--rouge); font-size: 1.1rem; flex-shrink: 0;
+  }
+  .media-list li em { font-style: italic; color: var(--gris); }
+  .media-list li strong { font-weight: 600; }
+
   /* RESPONSIVE */
   @media (max-width: 900px) {
     .nav-links { display: none; }
@@ -446,6 +488,7 @@
     <li><a href="#apropos">À propos</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#temoignages">Témoignages</a></li>
+    <li><a href="#medias">Médias</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#contact" class="nav-cta">Séance gratuite</a></li>
   </ul>
@@ -458,6 +501,7 @@
   <a href="#apropos" onclick="closeMenu()">À propos</a>
   <a href="#services" onclick="closeMenu()">Services</a>
   <a href="#temoignages" onclick="closeMenu()">Témoignages</a>
+  <a href="#medias" onclick="closeMenu()">Médias</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
   <a href="#contact" class="m-cta" onclick="closeMenu()">🎁 Séance gratuite</a>
 </div>
@@ -470,7 +514,7 @@
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-badge">Coaching amoureux depuis 2004</div>
-      <h1 class="hero-h1-seo">Coaching Amoureux à Montréal – Marie Archibald<span class="hero-h1-visual" aria-hidden="true">Trouvez le vrai amour!<br>Ravivez la <em>flamme.</em></span></h1>
+      <h1 class="hero-h1-seo">Coaching Amoureux à Montréal – Marie Archibald<span class="hero-h1-visual" aria-hidden="true">Trouvez l'amour.<br>Ravivez la <em>flamme.</em></span></h1>
       <p class="hero-sub">Marie Archibald vous accompagne vers une vie amoureuse épanouissante grâce à une approche unique, bienveillante et personnalisée.</p>
       <div class="hero-stars">
         <span class="stars">★★★★★</span>
@@ -836,6 +880,113 @@
   </div>
 </section>
 
+
+<!-- MÉDIAS -->
+<section id="medias">
+  <div class="medias-inner">
+    <div class="medias-header reveal">
+      <div class="section-label">Présence médiatique</div>
+      <h2>Marie dans<br>les <em>médias</em></h2>
+      <p class="section-intro">Depuis 2004, Marie Archibald est une référence reconnue dans les médias québécois pour son expertise en coaching amoureux.</p>
+    </div>
+
+    <div class="medias-nav">
+      <button class="media-tab active" onclick="switchTab('tele', this)">📺 Télévision</button>
+      <button class="media-tab" onclick="switchTab('internet', this)">🌐 Internet</button>
+      <button class="media-tab" onclick="switchTab('presse', this)">📰 Presse écrite</button>
+      <button class="media-tab" onclick="switchTab('radio', this)">📻 Radio</button>
+    </div>
+
+    <!-- TÉLÉVISION -->
+    <div class="media-section active" id="tab-tele">
+      <h3 class="media-category-title">À la télévision</h3>
+      <ul class="media-list">
+        <li><strong>Radio-Canada - À la Soirée est encore jeune </strong>, 20 avril 2012</li>
+        <li><strong>TVA – Salut Bonjour</strong>, 24 novembre 2013 – Trucs pour les Célibataires</li>
+        <li><strong>Montreal.tv</strong>, 24 novembre 2013 – Salon Vivre en solo – célibataire @ Montréal</li>
+        <li><strong>TVA – Salut Bonjour</strong>, 24 janvier 2011 – François Charron parle de Coach en séduction pour apprendre à draguer sur le Web</li>
+        <li><strong>TVA – Salut Bonjour</strong>, 6 février 2008 – Marie-France Archibald en entrevue parle de l'aide aux célibataires pour être plus à l'aise afin de rencontrer l'âme sœur et améliorer leurs relations amoureuses</li>
+        <li><strong>TV5.ca – Tu m'étonnes</strong>, 17 avril 2007 – Pour aider les célibataires et les couples en début de fréquentation pour charmer davantage. Savoir aborder et comment se comporter dans un rendez-vous galant</li>
+        <li><strong>TVA – Salut Bonjour – François Charron</strong>, 13 février 2006</li>
+        <li><strong>TVA – 2 filles le matin</strong>, 27 octobre 2005 – Entrevue avec Mélanie Ménard : Antoine Bertrand de la télésérie Les Bougon passe un questionnaire sur son potentiel de séduction</li>
+        <li><strong>TVA – Dans la mire.com</strong>, 25 avril 2005</li>
+        <li><strong>TQS – Le Mec à Dames</strong>, 7 mars 2005</li>
+        <li><strong>Radio-Canada (SRC) – C'est dans l'air</strong>, 14 février 2005</li>
+        <li><strong>TVA – Saisons de Clodine</strong>, 11 février 2005</li>
+        <li><strong>LCN – Nouvelles du matin</strong>, 11 février 2005</li>
+      </ul>
+    </div>
+
+    <!-- INTERNET -->
+    <div class="media-section" id="tab-internet">
+      <h3 class="media-category-title">Sur Internet</h3>
+      <ul class="media-list">
+        <li><strong>Le Soleil</strong>, 12 février 2022 – <em>Le non-mode d'emploi du langage du corps dans la séduction</em></li>
+        <li><strong>CBC.ca</strong>, 23 février 2021 – <em>Dating – Radio Noon Quebec With Shawn Apel</em></li>
+        <li><strong>Radio-Canada</strong>, 28 novembre 2020 – Marc Labrèche – <em>Un phare dans la nuit</em></li>
+        <li><strong>Canoe.ca</strong>, 3 octobre 2012 – <em>Conseils pratiques pour dénicher l'âme sœur</em></li>
+        <li><strong>Canoe.ca</strong>, 26 septembre 2012 – <em>La Séduction ça s'apprend</em></li>
+        <li><strong>Francoischarron.com</strong>, 12 février 2010 – <em>Coach en séduction pour apprendre à draguer sur le Web</em></li>
+        <li><strong>Francoischarron.com</strong>, 13 février 2006 – <em>Cours de séduction pour hommes célibataires</em></li>
+        <li><strong>Jeune Chambre de Commerce de Montréal</strong>, 30 novembre 2006 – Coach Séduction – Partenaire avec Rencontres Sportives</li>
+        <li><strong>Jeune Chambre de Commerce de Montréal</strong>, 15 février 2005 – Coach Séduction dans le Journal de Montréal, La Presse pour la St-Valentin, à TVA et dans Clin d'œil</li>
+      </ul>
+    </div>
+
+    <!-- PRESSE ÉCRITE -->
+    <div class="media-section" id="tab-presse">
+      <h3 class="media-category-title">Presse écrite</h3>
+      <ul class="media-list">
+        <li><strong>Magazine Nathalie Simard</strong>, 10 février 2022 – <em>Faire appel à un coach amoureux</em></li>
+        <li><strong>Journal 24 h</strong>, 19 novembre 2020 – <em>Tout ce qu'il faut savoir sur la «cuffing season»</em></li>
+        <li><strong>La Presse</strong>, 19 juillet 2014 – <em>Dix conseils pour briller au premier rendez-vous</em></li>
+        <li><strong>Journal Métro</strong>, 14 février 2013 – <em>Les Métro Flirt décortiqués</em></li>
+        <li><strong>Reader's Digest</strong>, 11 février 2011 – <em>Séduction Mode d'emploi</em></li>
+        <li><strong>Elle Québec</strong> (Spécial Célibataires), édition septembre 2011</li>
+        <li><strong>Journal de Montréal</strong>, 16 septembre 2008</li>
+        <li><strong>Magazine Jobboom</strong>, 18 février 2008</li>
+        <li><strong>Journal de Montréal</strong>, 12 février 2008 – <em>On préfère encore un contact réel</em></li>
+        <li><strong>La Presse</strong>, 14 septembre 2007</li>
+        <li><strong>Le Soleil / Cyberpresse.ca</strong>, 13 juin 2007</li>
+        <li><strong>L'Actualité</strong>, 15 mars 2007 – <em>Draguer par Internet, un art !</em></li>
+        <li><strong>Dernière Heure</strong>, 9 février 2007</li>
+        <li><strong>Célibataires</strong> – Chronique, octobre 2006</li>
+        <li><strong>Célibataires</strong>, septembre 2006</li>
+        <li><strong>Journal de Montréal</strong>, 4 janvier 2006</li>
+        <li><strong>Voir</strong> (Cahier V), 20 octobre 2005</li>
+        <li><strong>La Presse</strong>, 14 février 2005</li>
+        <li><strong>Journal de Montréal</strong>, 6 février 2005</li>
+        <li><strong>24h</strong>, 14 décembre 2004</li>
+        <li><strong>Journal Métro</strong>, 26 octobre 2004</li>
+        <li><strong>Journal Métro</strong>, 30 novembre 2004</li>
+      </ul>
+    </div>
+
+    <!-- RADIO -->
+    <div class="media-section" id="tab-radio">
+      <h3 class="media-category-title">À la radio</h3>
+      <ul class="media-list">
+        <li><strong>Planète Lov</strong>, 14 février 2013 – <em>Debout la Planète</em></li>
+        <li><strong>Radio-Canada</strong>, 22 novembre 2013 – <em>La Soirée est encore Jeune</em></li>
+        <li><strong>Radio-Canada</strong>, 12 février 2011</li>
+        <li><strong>CKOI (Drummondville)</strong>, 12 février 2008</li>
+        <li><strong>Rythme FM 105,7</strong>, 18 septembre 2007</li>
+        <li><strong>Radio Énergie</strong>, 14 septembre 2007</li>
+        <li><strong>CKOI – Du jus du fort</strong>, 13 février 2007</li>
+        <li><strong>103,5 FM – Cédez le passage</strong>, 14 juin 2007</li>
+        <li><strong>SRC – Macadam Tribus</strong>, 11 février 2006</li>
+        <li><strong>Radio Énergie – La faune</strong>, 5 janvier 2006</li>
+        <li><strong>Rythme FM 105,7</strong>, 5 janvier 2006</li>
+        <li><strong>98,5 FM – Giguère & cie</strong>, 16 octobre 2005</li>
+        <li><strong>Rock Détente – PS Tendresse</strong>, 13 septembre 2005</li>
+        <li><strong>CPAM</strong>, 26 octobre 2004</li>
+        <li><strong>Radio Centre-Ville</strong>, 3 octobre 2004</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-inner">
@@ -879,8 +1030,8 @@
             </select>
           </div>
           <div class="form-group form-full">
-            <label>Pour connaître votre personnalité, quel est votre travail ?</label>
-            <input type="text" name="travail" placeholder="Votre travail">
+            <label>Quel est votre travail ?</label>
+            <input type="text" name="travail" placeholder="Votre profession">
           </div>
         </div>
         <div class="form-submit-wrap">
@@ -901,6 +1052,7 @@
     <a href="#apropos">À propos</a>
     <a href="#services">Services</a>
     <a href="#temoignages">Témoignages</a>
+    <a href="#medias">Médias</a>
     <a href="#contact">Contact</a>
   </div>
   <div class="footer-contact">
@@ -955,8 +1107,8 @@
             </select>
           </div>
           <div class="form-group form-full">
-            <label>Quel est votre travail ?</label>
-            <input type="text" name="travail" placeholder="Votre profession">
+            <label>Pour connaître votre personnalité, quel est votre travail ?</label>
+            <input type="text" name="travail" placeholder="Votre travail">
           </div>
         </div>
         <div class="form-submit-wrap">
@@ -1065,6 +1217,15 @@
     });
     const stillHidden = Array.from(document.querySelectorAll('.temoignage-card.hidden')).filter(c => c.style.display !== 'none');
     if (stillHidden.length === 0) document.getElementById('showMoreWrap').style.display = 'none';
+  }
+
+
+  // MEDIA TABS
+  function switchTab(tabId, btn) {
+    document.querySelectorAll('.media-tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.media-section').forEach(s => s.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + tabId).classList.add('active');
   }
 
   // REVEAL on scroll
